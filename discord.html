@@ -8,7 +8,7 @@
     <script>
     function sendMessage() 
     {
-        var EndDate = new Array(1,5,2020);
+        var EndDate = new Array(1,8,2020);
         var EndDay = EndDate[0];
         var EndMonth = EndDate[1];
         var EndYear = EndDate[2];
@@ -16,15 +16,16 @@
         var d = new Date();
 
         if (d.getFullYear() <= EndYear)
-            {
+        {
             if(d.getMonth() + 1 <= EndMonth)
             { 
-                if(d.getDay() <= EndDay)
+                if(d.getDate() <= EndDay || d.getMonth() + 1 < EndMonth)
                 {
                     let msg = document.querySelector("#modname").value;
+                    let webhook = document.querySelector("#webhook").value;
 
                     var request = new XMLHttpRequest();
-                    request.open("POST", "https://discordapp.com/api/webhooks/697502839064231966/CV0x12ezt_bp6MTG9Ry6rruGZzgXOpo2v5_IQwBAXrWtmr7YiCR-vgSzFZcp3YzNU9I4");
+                    request.open("POST", webhook);
 
                     request.setRequestHeader('Content-type', 'application/json');
 
@@ -35,20 +36,21 @@
                     }
 
                     request.send(JSON.stringify(params));
-                } else { alert("Times Up!");}
-            } else { alert("Times Up!");}
-        } else { alert("Times Up!");}
+                } else { alert(d.getDate());}
+            } else { alert("2");}
+        } else { alert("3");}
     }
     </script>
   </head>
   <body>
     <p style="font-size:300%" align="center"><strong>Send mod idea to discord<strong></p>
     <p style="font-size:150%">On this page you can send mod ideas to discord using the textfield and send button</p>
-    <p style="font-size:150%">The ideas are for the next project: Minecraft Warping Heros <br><br> Pro tip: If you have discord open you can check if everything worked!
+    <p style="font-size:150%">The ideas are for the next project: Minecraft Galactic Trip <br><br>
     </p>
-    <label for="modname" style="font-size:150%">Enter the name of the mod here</label>
+    <label for="webhook" style="font-size:150%">Enter the webhook here</label>
     <input type="text" id="modname"><br>
+    <label for="modname" style="font-size:150%">Enter the name of the mod here</label>
+    <input type="text" id="webhook"><br>
     <button onclick="sendMessage()" id="button" style="font-size:150%">Send</button>
-    <!--<h1>Times Up!</h1> -->
   </body>
 </html>
