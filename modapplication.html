@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TSR Website | TSR Network Staff Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style> a {
+            text-decoration:none;
+        }
+        </style>
+
+        <script>
+            function sendApplication() 
+            {
+                var endDate = new Array(1,7,2021);
+
+                var date = new Date();
+
+                if (date.getFullYear() <= endDate[2])
+                {
+                    if(date.getMonth() + 1 <= endDate[1])
+                    { 
+                        if(date.getDate() <= endDate[0] || date.getMonth() + 1 < endDate[1])
+                        {
+                            let dcname = document.querySelector("#dcname").value;
+                            let mdname = document.querySelector("#mdname").value;
+                            let reason = document.querySelector("#reason").value;
+                            let playtime = document.querySelector("#playtime").value;
+                            let canMakeMaps = document.querySelector("#canmakemaps").value;
+                            let experience = document.querySelector("#experience").value;
+
+                            msg = "**Discord name + tag**\n" + dcname + "\n\n**Mindustry name**\n" + mdname;
+                            msg += "\n\n**Why do you want to become staff?**\n" + reason;
+                            msg += "\n\n**How long have you been playing mindustry?**\n" + playtime;
+                            msg += "\n\n**Can you make maps?**\n" + canMakeMaps;
+                            msg += "\n\n**Have you got any experience in being a mod on discord / in mindustry?**\n" + experience;
+
+                            webhook = document.querySelector("#webhook").value;
+
+                            var request = new XMLHttpRequest();
+                            request.open("POST", webhook);
+
+                            request.setRequestHeader('Content-type', 'application/json');
+
+                            var params = {
+                                username: "TSR Website | Staff Application",
+                                avatar_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQHSjXLtyEEcZjGhUu6V3WRo7MxhGKN-i9KzLhQCV_T2sfxVYr-&usqp=CAU",
+                                content: msg
+                            }
+
+                            request.send(JSON.stringify(params));
+                        } else { alert("Time is up");}
+                    } else { alert("Time is up");}
+                } else { alert("Time is up");}
+            }
+        </script>
+    </head>
+
+    <body>
+        <p style="font-size:300%" align="center"><strong>Welcome to the TSR Network Staff Application!<strong></p>
+        <a href="..", style="font-size:150%;color:coral">Back</a>
+        <p style="font-size:150%">On this page you can apply as staff for the TSR Network</p>
+        <p style="font-size:150%">You need a key to apply, ask GaviTSRA!</p>
+        <label for="webhook", style="font-size:150%">Key</label><br>
+        <input type="text", id="webhook"><br>
+        <label for="dcname" style="font-size:150%">Your discord name + tag</label><br>
+        <input type="text" id="dcname"><br>
+        <label for="mdname" style="font-size:150%">Your mindustry name</label><br>
+        <input type="text" id="mdname"><br>
+        <label for="reason" style="font-size:150%">Why do you want to become staff?</label><br>
+        <input type="text" id="reason", size="100"><br>
+        <label for="playtime" style="font-size:150%">How long have you been playing mindustry?</label><br>
+        <input type="text" id="playtime"><br>
+        <label for="canmakemaps" style="font-size:150%">Can you make maps?</label><br>
+        <input type="text" id="canmakemaps"><br>
+        <label for="experience" style="font-size:150%">Have you got any experience in being a mod on discord / in mindustry?</label><br>
+        <input type="text" id="experience"><br>
+
+        <button onclick="sendApplication()" id="button" style="font-size:150%">Send</button>
+    </body>
+</html>
