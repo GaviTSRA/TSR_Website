@@ -189,7 +189,7 @@
                     <p>/use</p>
                 </td>
                 <td>
-                    <p>ID | ---</p>
+                    <p>ID | none</p>
                 </td>
                 <td>
                     <p>Player</p>
@@ -206,27 +206,278 @@
                     <p>y | f</p>
                 </td>
                 <td>
-                    <p>y: Player | f: Trial Mod</p>
+                    <p>y: Player <br> f: Trial Mod</p>
                 </td>
                 <td>
                     <p>y: Vote to skip the map. If enough players vote, the map is skipped. <br>f: Force skip the map</p>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <p>/unit</p>
+                </td>
+                <td>
+                    <p>UNITNAME</p>
+                </td>
+                <td>
+                    <p>Trial Mod</p>
+                </td>
+                <td>
+                    <p>Spawn UNITNAME at your location</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/team</p>
+                </td>
+                <td>
+                    <p>ID</p>
+                </td>
+                <td>
+                    <p>Trial Mod</p>
+                </td>
+                <td>
+                    <p>Changes your team to ID</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/killunits/p>
+                </td>
+                <td>
+                    <p>---</p>
+                </td>
+                <td>
+                    <p>Trial Mod</p>
+                </td>
+                <td>
+                    <p>Kills all non-player-controlled units on the server</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/ukill</p>
+                </td>
+                <td>
+                    <p>UNITNAME</p>
+                </td>
+                <td>
+                    <p>Trial Mod</p>
+                </td>
+                <td>
+                    <p>Kills all UNITNAME units</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/bans</p>
+                </td>
+                <td>
+                    <p>---</p>
+                </td>
+                <td>
+                    <p>Trial Mod</p>
+                </td>
+                <td>
+                    <p>List all bans</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/configs</p>
+                </td>
+                <td>
+                    <p>---</p>
+                </td>
+                <td>
+                    <p>Trial Mod</p>
+                </td>
+                <td>
+                    <p>List all configs with their value</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/kick</p>
+                </td>
+                <td>
+                    <p>ID SECONDS REASON...</p>
+                </td>
+                <td>
+                    <p>Mod</p>
+                </td>
+                <td>
+                    <p>Kick a player with ID for SECONDS because of REASON</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/killall</p>
+                </td>
+                <td>
+                    <p>---</p>
+                </td>
+                <td>
+                    <p>Mod</p>
+                </td>
+                <td>
+                    <p>Kills all units, including players. Only use in worst-case</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/pteam</p>
+                </td>
+                <td>
+                    <p>ID TEAMID</p>
+                </td>
+                <td>
+                    <p>Mod</p>
+                </td>
+                <td>
+                    <p>Changes the team of the player with ID to TEAMID</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/announce</p>
+                </td>
+                <td>
+                    <p>MESSAGE...</p>
+                </td>
+                <td>
+                    <p>Mod</p>
+                </td>
+                <td>
+                    <p>Shows the MESSAGE in the middle of everyone's screen</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/ban</p>
+                </td>
+                <td>
+                    <p>ID REASON</p>
+                </td>
+                <td>
+                    <p>Admin</p>
+                </td>
+                <td>
+                    <p>Bans the player with ID because of REASON</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/bc</p>
+                </td>
+                <td>
+                    <p>MESSAGE...</p>
+                </td>
+                <td>
+                    <p>Admin</p>
+                </td>
+                <td>
+                    <p>Make a popup with MESSAGE appear in the middle of everyone's screen</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/destroylogic</p>
+                </td>
+                <td>
+                    <p>CODE...</p>
+                </td>
+                <td>
+                    <p>Admin</p>
+                </td>
+                <td>
+                    <p>Destroy each logic block with CODE</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/destroyfacs</p>
+                </td>
+                <td>
+                    <p>--</p>
+                </td>
+                <td>
+                    <p>Admin</p>
+                </td>
+                <td>
+                    <p>Destroy all factories</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/destroy</p>
+                </td>
+                <td>
+                    <p>BLOCKNAME</p>
+                </td>
+                <td>
+                    <p>Admin</p>
+                </td>
+                <td>
+                    <p>Destroy all BLOCKNAME</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/js</p>
+                </td>
+                <td>
+                    <p>CODE...</p>
+                </td>
+                <td>
+                    <p>Admin / Owner</p>
+                </td>
+                <td>
+                    <p>Execute JS code, if enableAdminJS is enabled, admins can use this command</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/setconf</p>
+                </td>
+                <td>
+                    <p>KEY VALUE</p>
+                </td>
+                <td>
+                    <p>Owner</p>
+                </td>
+                <td>
+                    <p>Set the VALUE of the KEY config</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/resetconf</p>
+                </td>
+                <td>
+                    <p>---</p>
+                </td>
+                <td>
+                    <p>Owner</p>
+                </td>
+                <td>
+                    <p>Reset all configs to their standard value</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>/setperm</p>
+                </td>
+                <td>
+                    <p>ID PERM</p>
+                </td>
+                <td>
+                    <p>Owner</p>
+                </td>
+                <td>
+                    <p>Set the perms of ID to PERM</p>
+                </td>
+            </tr>
         </table>
     </body>
 </html>
-
-<tr>
-    <td>
-        <p></p>
-    </td>
-    <td>
-        <p></p>
-    </td>
-    <td>
-        <p></p>
-    </td>
-    <td>
-        <p></p>
-    </td>
-</tr>
