@@ -41,7 +41,7 @@
                             var request = new XMLHttpRequest();
                             request.open("POST", webhook);
 
-                            request.setRequestHeader('Content-type', 'application/json');
+                            request.setRequestHeader('Content-type', 'application/json');                            
 
                             var params = {
                                 username: "TSR Website | Staff Application",
@@ -50,6 +50,8 @@
                             }
 
                             request.send(JSON.stringify(params));
+                            alert("Application send! View the status in #staff-application!")
+                            location.href = './index.html'
                         } else { alert("Time is up");}
                     } else { alert("Time is up");}
                 } else { alert("Time is up");}
