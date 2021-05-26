@@ -42,7 +42,6 @@
                             request.open("POST", webhook);
 
                             request.setRequestHeader('Content-type', 'application/json');      
-                            request.setRequestHeader('permissions-policy', 'interest-cohort=()');
 
                             var params = {
                                 username: "TSR Website | Staff Application",
@@ -62,7 +61,7 @@
 
     <body>
         <p style="font-size:300%" align="center"><strong>Welcome to the TSR Network Staff Application!<strong></p>
-        <a href="..", style="font-size:150%;color:coral">Back</a>
+        <a href="..", style="font-size:150%;color:coral">Back to home</a>
         <p style="font-size:150%">On this page you can apply as staff for the TSR Network</p>
         <label for="webhook", style="font-size:150%">Key</label><br>
         <input type="text", id="webhook"><br>
