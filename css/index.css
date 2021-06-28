@@ -8,11 +8,15 @@ a {
 p {
     color: white;
     font-size: 150%;
-    
 }
 .title {
+    display:inline-block;
     font-size: 300%;
+    width: 100%;
     text-align: center;
+    color:yellow;
+    padding: 0% 0% 0% 0%;
+    margin: 0% 0% 5% 0%;
 }
 #discordinv{
     display: inline-block;
@@ -21,11 +25,10 @@ p {
     border-color: rgb(255, 255, 255);
     background-color: blue;
     color: white;
-    padding: 10px 20px 10px 20px;
-    width: 35%;
+    padding: 1% 2% 1% 2%;
+    width: 25%;
     text-align: center;
-    align-items: center;
-    margin: 0px 10px 0px 20px;
+    margin: 0px 0px 0px 7%;
     box-shadow: 0px 0px 30px blue; 
 }
 #staffap{
@@ -35,10 +38,10 @@ p {
     border-color: rgb(255, 255, 255);
     background-color: green;
     color: white;
-    padding: 10px 20px 10px 20px;
+    padding: 1% 2% 1% 2%;
     width: 25%;
     text-align: center;
-    margin: 0px;
+    margin: 0% 1% 0% 1%;
     box-shadow: 0px 0px 30px green; 
 }
 #plugindoc{
@@ -48,9 +51,29 @@ p {
     border-color: rgb(255, 255, 255);
     background-color:crimson;
     color: white;
-    padding: 10px 20px 10px 20px;
+    padding: 1% 2% 1% 2%;
     width: 25%;
     text-align: center;
-    margin: 10px;
+    margin: 0%;
     box-shadow: 0px 0px 30px crimson; 
+}
+@media screen and (max-width:1100px) {
+    .title {
+        display:block;
+    }
+    #discordinv{
+        padding: 1% 2% 1% 5%;
+        width: 25%;
+        margin: 0% 5% 2.5% 35%;
+    }
+    #staffap{
+        padding: 1% 2% 1% 5%;
+        width: 25%;
+        margin: 0% 5% 2.5% 35%;
+    }
+    #plugindoc{
+        padding: 1% 2% 1% 5%;
+        width: 25%;
+        margin: 0% 5% 0% 35%;
+    }
 }
