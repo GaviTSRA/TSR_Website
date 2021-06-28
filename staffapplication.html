@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TSR Website | TSR Network Staff Application</title>
+        <link rel="stylesheet", href="css/staffapplication.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style> a {
+            text-decoration:none;
+        }
+        </style>
+
+        <script>
+            function sendApplication() 
+            {
+                var endDate = new Array(1,7,2021);
+
+                var date = new Date();
+
+                if (date.getFullYear() <= endDate[2])
+                {
+                    if(date.getMonth() + 1 <= endDate[1])
+                    { 
+                        if(date.getDate() <= endDate[0] || date.getMonth() + 1 < endDate[1])
+                        {
+                            let dcname = document.querySelector("#dcname").value;
+                            let mdname = document.querySelector("#mdname").value;
+                            let reason = document.querySelector("#reason").value;
+                            let playtime = document.querySelector("#playtime").value;
+                            let canMakeMaps = document.querySelector("#canmakemaps").value;
+                            let experience = document.querySelector("#experience").value;
+
+                            msg = "**Discord name + tag**\n" + dcname + "\n\n**Mindustry name**\n" + mdname;
+                            msg += "\n\n**Why do you want to become staff?**\n" + reason;
+                            msg += "\n\n**How long have you been playing mindustry?**\n" + playtime;
+                            msg += "\n\n**Can you make maps?**\n" + canMakeMaps;
+                            msg += "\n\n**Have you got any experience in being a mod on discord / in mindustry?**\n" + experience;
+
+                            webhook = document.querySelector("#webhook").value;
+
+                            var request = new XMLHttpRequest();
+                            request.open("POST", webhook);
+
+                            request.setRequestHeader('Content-type', 'application/json');      
+
+                            var params = {
+                                username: "TSR Website | Staff Application",
+                                avatar_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQHSjXLtyEEcZjGhUu6V3WRo7MxhGKN-i9KzLhQCV_T2sfxVYr-&usqp=CAU",
+                                content: msg
+                            }
+
+                            request.send(JSON.stringify(params));
+                            alert("Application send! View the status in #staff-application!")
+                        } else { alert("Time is up");}
+                    } else { alert("Time is up");}
+                } else { alert("Time is up");}
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <a href="..", id="back">Back</a>
+            <hr>
+        </header>
+        <p class="title"><strong>TSR Network Staff Application<strong></p>
+        <label for="webhook", ><p>Key</p></label>
+        <input type="text", id="webhook">
+        <label for="dcname" ><p>Your discord name + tag</p></label>
+        <input type="text" id="dcname">
+        <label for="mdname" ><p>Your mindustry name</p></label>
+        <input type="text" id="mdname">
+        <label for="reason"><p>Why do you want to become staff?</p></label>
+        <input type="text" id="reason", size="100">
+        <label for="playtime" ><p>How long have you been playing mindustry?</p></label>
+        <input type="text" id="playtime">
+        <label for="canmakemaps"><p>Can you make maps?</p></label>
+        <input type="text" id="canmakemaps">
+        <label for="experience" ><p>Have you got any experience in being a mod on discord / in mindustry?</p></label>
+        <input type="text" id="experience">
+
+        <button onclick="sendApplication()" id="submit">Send</button>
+    </body>
+</html>
